@@ -2,39 +2,60 @@
 
 This project implements a neural network to classify handwritten digits from the MNIST dataset using TensorFlow and Keras. The workflow includes data loading, preprocessing, model building, training, evaluation, and prediction.
 
-**Project Overview**
+**Steps Performed**
 
-•Loaded the MNIST dataset and visualized sample images
+1. **Data Loading & Visualization**
 
-•Normalized the pixel values for faster and stable training
+Loaded MNIST using keras.datasets.mnist
 
-•Built a Sequential Neural Network consisting of:
+Displayed sample images using Matplotlib
 
-•Flatten layer to convert images into vectors
+2. **Preprocessing**
 
-•Dense layer with 128 neurons (ReLU activation)
+Normalized pixel values (0–255 → 0–1)
 
-•Dense layer with 32 neurons (ReLU activation)
+Prepared data for training and testing
 
-•Output layer with 10 neurons (Softmax activation)
+3.**Model Architecture**
 
-•Compiled the model using:
+A Sequential Neural Network with:
 
-•Adam optimizer
+Layer	Description
+Flatten	Converts 28×28 image → 784-dim vector
+Dense (128, ReLU)	Fully connected hidden layer
+Dense (32, ReLU)	Second hidden layer
+Dense (10, Softmax)	Output layer for digit classes
 
-•Sparse Categorical Crossentropy loss
+4. **Model Compilation**
 
-•Accuracy as the evaluation metric
+Loss: Sparse Categorical Crossentropy
 
-•Trained the model for 25 epochs using an 80-20 train/validation split
+Optimizer: Adam
 
-•Generated predictions for the test dataset and calculated the overall test accuracy
+Metric: Accuracy
 
-•Plotted training curves for loss and accuracy
+5. **Training**
 
-•Performed a sample prediction on a single test image
+Trained for 25 epochs
 
- **Model Performance**
+Used validation_split = 0.2
+
+Tracked accuracy and loss throughout training
+
+6. **Evaluation & Predictions**
+
+Predicted on test dataset
+
+Calculated test accuracy using accuracy_score
+
+**Plotted:**
+
+Training vs validation loss
+
+Training vs validation accuracy
+
+
+**Model Performance**
 
 The model trains smoothly and produces strong test accuracy on the MNIST dataset.
 Both training vs. validation loss and training vs. validation accuracy curves are plotted to visualize performance.
